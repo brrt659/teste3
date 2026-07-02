@@ -1,18 +1,14 @@
 
 
 body {
-    background-image:  url("imagens/fundo index.png");
- 
-}
-
-body {
+    background-image: url("imagens/fundo index.png");
     position: relative;
+    min-height: 100vh;
 }
-
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 500px;
     height: 700px;
     background-color: #e8d8c3;
@@ -22,48 +18,106 @@ body::before {
     z-index: -1;
 }
 
-
 header {
-    text-align: center;
-    padding: 30px;
-    background-color: #02180e;
-}
-   h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
-     color: #e8d8c3;  
-    }
-nav h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-nav ul {
-    list-style: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(2, 24, 14, 0.95);
+    border-bottom: 1px solid rgba(232, 216, 195, 0.15);
+
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px 40px;
 }
+
+.logo h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    color: #e8d8c3;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-top: 10px;
+}
+
 nav a {
     text-decoration: none;
     color: #e8d8c3;
-    font-size: 18px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    position: relative;
 }
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 1px;
+    background: #b98b5e;
+    transition: 0.3s ease;
+}
+
 nav a:hover {
     color: #b98b5e;
 }
-div {
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.conteudo {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.categorias h2,
+.categorias h3,
+.categorias h4,
+.categorias h5 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.categorias p {
+    font-size: 16px;
+    padding: 0 5px;
+}
+
 footer {
     text-align: center;
-    padding: 5px;
-    background-color: #02180e;
+    padding: 2px;
+    background-color: rgba(2, 24, 14, 0.95);
     color: #e8d8c3;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
+
